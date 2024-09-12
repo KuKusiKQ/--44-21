@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Ivanov-Leonid-KT-44-21.props" />
+</Project>
