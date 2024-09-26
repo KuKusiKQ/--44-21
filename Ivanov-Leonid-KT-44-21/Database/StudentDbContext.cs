@@ -6,13 +6,16 @@ namespace Ivanov_Leonid_KT_44_21.Database
 {
     public class StudentDbContext : DbContext
     {
-        DbSet<Student> Students { get; set; }
-        DbSet<Group> Groups { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Group> Groups { get; set; }
+        public DbSet<Course> Courses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Добавляем конфигурации к таблицам
             modelBuilder.ApplyConfiguration(new StudentConfiguration());
             modelBuilder.ApplyConfiguration(new GroupConfiguration());
+            modelBuilder.ApplyConfiguration(new CourseConfiguration());
         }
 
         public StudentDbContext(DbContextOptions<StudentDbContext> options) : base(options)
