@@ -1,83 +1,29 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Ivanov_Leonid_KT_44_21.Interfaces;
+using Ivanov_Leonid_KT_44_21.Filters;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ivanov_Leonid_KT_44_21.Controllers
 {
-    public class StudentsController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class StudentsController : ControllerBase
     {
-        // GET: StudentsController
-        public ActionResult Index()
+        private readonly ILogger<StudentsController> _logger;
+        private readonly IStudentService _studentService;
+
+        public StudentsController(ILogger<StudentsController> logger, IStudentService studentService)
         {
-            return View();
+            _logger = logger;
+            _studentService = studentService;
         }
 
-        // GET: StudentsController/Details/5
-        public ActionResult Details(int id)
+        [HttpPost("GetStudentsByGroup")]
+        public async Task<IActionResult> GetStudentsByGroupAsync(StudentGroupFilter filter, CancellationToken cancellationToken = default)
         {
-            return View();
-        }
+            var students = await _studentService.GetStudentsByGroupAsync(filter, cancellationToken);
 
-        // GET: StudentsController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: StudentsController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: StudentsController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: StudentsController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: StudentsController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: StudentsController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return Ok(students);
         }
     }
 }
