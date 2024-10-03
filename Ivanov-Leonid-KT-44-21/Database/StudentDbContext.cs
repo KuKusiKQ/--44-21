@@ -12,7 +12,7 @@ namespace Ivanov_Leonid_KT_44_21.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Добавляем конфигурации к таблицам
+            //Добавляем конфигурации к таблицам8
             modelBuilder.ApplyConfiguration(new StudentConfiguration());
             modelBuilder.ApplyConfiguration(new GroupConfiguration());
             modelBuilder.ApplyConfiguration(new CourseConfiguration());
