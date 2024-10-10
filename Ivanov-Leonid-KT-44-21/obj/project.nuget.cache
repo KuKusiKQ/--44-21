@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JF8T2HaXRt6TLhcGLfJOTx24Fkz1BTVfv9i+jhM5S/6Z8s8cDLPvhu3BQ1v7sZ275AkDzdCfcduVOGcnXeTqdQ==",
+  "dgSpecHash": "BKm9crWhIEiXJhcFf6OvagxlMwIg6EOfs0oxUy5r9zPhPq+B8CZjcotQdumWonQWWERFkKdrmrCKE5622vriUw==",
   "success": true,
   "projectFilePath": "E:\\7 семестр\\Проектный практикум\\Project\\Ivanov-Leonid-KT-44-21\\Ivanov-Leonid-KT-44-21.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\j-classroom\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.20\\microsoft.entityframeworkcore.abstractions.7.0.20.nupkg.sha512",
     "C:\\Users\\j-classroom\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.20\\microsoft.entityframeworkcore.analyzers.7.0.20.nupkg.sha512",
     "C:\\Users\\j-classroom\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.20\\microsoft.entityframeworkcore.design.7.0.20.nupkg.sha512",
+    "C:\\Users\\j-classroom\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\7.0.20\\microsoft.entityframeworkcore.inmemory.7.0.20.nupkg.sha512",
     "C:\\Users\\j-classroom\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.20\\microsoft.entityframeworkcore.relational.7.0.20.nupkg.sha512",
     "C:\\Users\\j-classroom\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.20\\microsoft.entityframeworkcore.sqlserver.7.0.20.nupkg.sha512",
     "C:\\Users\\j-classroom\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.20\\microsoft.entityframeworkcore.tools.7.0.20.nupkg.sha512",
