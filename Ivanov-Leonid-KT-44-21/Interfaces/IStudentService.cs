@@ -27,7 +27,7 @@ namespace Ivanov_Leonid_KT_44_21.Interfaces
 
         public Task<Student[]> GetStudentsByFioAsync(StudentFIOFilter filter, CancellationToken cancellationToken = default)
         {
-            var students = _dbContext.Set<Student>().Where(w => (w.FirstName == filter.FIO) || (w.MiddleName == filter.FIO) || (w.LastName == filter.FIO)).ToArrayAsync(cancellationToken);
+            var students = _dbContext.Set<Student>().Where(w => (w.FirstName == filter.FirstName) && (w.MiddleName == filter.MiddleName) && (w.LastName == filter.LastName)).ToArrayAsync(cancellationToken);
 
             return students;
         }
