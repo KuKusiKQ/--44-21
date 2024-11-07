@@ -9,6 +9,7 @@ namespace Ivanov_Leonid_KT_44_21.Interfaces
     {
         public Task<Student[]> GetStudentsByGroupAsync(StudentGroupFilter filter, CancellationToken cancellationToken);
         public Task<Student[]> GetStudentsByFioAsync(StudentFIOFilter filter, CancellationToken cancellationToken);
+        public Task<Student[]> GetStudentsByGroupIdAsync(StudentGroupIdFilter filter, CancellationToken cancellationToken);
     }
 
     public class StudentService : IStudentService
@@ -21,6 +22,13 @@ namespace Ivanov_Leonid_KT_44_21.Interfaces
         public Task<Student[]> GetStudentsByGroupAsync(StudentGroupFilter filter, CancellationToken cancellationToken = default)
         {
             var students = _dbContext.Set<Student>().Where(w => w.Group.GroupName == filter.GroupName).ToArrayAsync(cancellationToken);
+
+            return students;
+        }
+
+        public Task<Student[]> GetStudentsByGroupIdAsync(StudentGroupIdFilter filter, CancellationToken cancellationToken = default)
+        {
+            var students = _dbContext.Set<Student>().Where(w => w.Group.GroupId == filter.GroupId).ToArrayAsync(cancellationToken);
 
             return students;
         }

@@ -2,11 +2,6 @@
 using Ivanov_Leonid_KT_44_21.Interfaces;
 using Ivanov_Leonid_KT_44_21.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ivanov_Leonid_KT_44_21.Tests
 {
@@ -22,7 +17,7 @@ namespace Ivanov_Leonid_KT_44_21.Tests
         }
 
         [Fact]
-        public async Task GetStudentsByGroupAsync_KT3120_TwoObjects()
+        public async Task GetStudentsByGroupAsync_KT4421_TwoObjects()
         {
             // Arrange
             var ctx = new StudentDbContext(_dbContextOptions);
@@ -36,6 +31,10 @@ namespace Ivanov_Leonid_KT_44_21.Tests
                 new Group
                 {
                     GroupName = "KT-42-21"
+                },
+                new Group
+                {
+                    GroupName = "KT-43-21"
                 }
             };
             await ctx.Set<Group>().AddRangeAsync(groups);
@@ -44,24 +43,24 @@ namespace Ivanov_Leonid_KT_44_21.Tests
             {
                 new Student
                 {
-                    FirstName = "qwerty",
-                    LastName = "asdf",
-                    MiddleName = "zxc",
+                    FirstName = "a",
+                    LastName = "a",
+                    MiddleName = "a",
                     GroupId = 1,
                 },
                 new Student
                 {
-                    FirstName = "qwerty2",
-                    LastName = "asdf2",
-                    MiddleName = "zxc2",
+                    FirstName = "a",
+                    LastName = "a",
+                    MiddleName = "b",
                     GroupId = 2,
                 },
                 new Student
                 {
-                    FirstName = "qwerty3",
-                    LastName = "asdf3",
-                    MiddleName = "zxc3",
-                    GroupId = 1,
+                    FirstName = "a",
+                    LastName = "a",
+                    MiddleName = "b",
+                    GroupId = 3,
                 }
             };
             await ctx.Set<Student>().AddRangeAsync(students);
@@ -76,7 +75,7 @@ namespace Ivanov_Leonid_KT_44_21.Tests
             var studentsResult = await studentService.GetStudentsByGroupAsync(filter, CancellationToken.None);
 
             // Assert
-            Assert.Equal(2, studentsResult.Length);
+            Assert.Equal(1, studentsResult.Length);
         }
     }
 }
